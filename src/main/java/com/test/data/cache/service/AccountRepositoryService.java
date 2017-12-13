@@ -1,19 +1,23 @@
 package com.test.data.cache.service;
 
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.test.data.cache.model.AccountInfo;
 import com.test.data.cache.repository.AccountRepository;
 
-@Component
+@Service
 public class AccountRepositoryService  {
-	
-	
 	@Autowired
-	public AccountRepository<AccountInfo> repo;
+	public AccountRepository repo;
+	
+	public AccountRepositoryService(){
+		
+	}
 	
 	@Cacheable("accountInfo")
 	public AccountInfo getAccountInfo(String id) {
@@ -22,6 +26,10 @@ public class AccountRepositoryService  {
 	
 	public void saveAccountToDB(AccountInfo accInfo){
 		repo.save(accInfo);
+	}
+	
+	public List<Iterable<AccountInfo>> getAll(){
+		return Arrays.asList(repo.findAll());
 	}
 
 	

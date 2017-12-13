@@ -1,10 +1,12 @@
 package com.test.data.cache.model;
+
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class AccountInfo {
-	
-	private String accountId;
+	@Id
+	private String id;
 	private String accountDetails;
 	
 	public AccountInfo(){
@@ -13,14 +15,14 @@ public class AccountInfo {
 	
 	public AccountInfo(String accountId, String accountDetails) {
 		super();
-		this.accountId = accountId;
+		this.id = accountId;
 		this.accountDetails = accountDetails;
 	}
 	public String getAccountId() {
-		return accountId;
+		return id;
 	}
 	public void setAccountId(String accountId) {
-		this.accountId = accountId;
+		this.id = accountId;
 	}
 	public String getAccountDetails() {
 		return accountDetails;
@@ -30,7 +32,7 @@ public class AccountInfo {
 	}
 	@Override
 	public String toString() {
-		return "AccountInfo [accountId=" + accountId + ", accountDetails=" + accountDetails + "]";
+		return "AccountInfo [accountId=" + id + ", accountDetails=" + accountDetails + "]";
 	}
 
 }

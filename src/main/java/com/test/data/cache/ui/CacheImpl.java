@@ -4,15 +4,17 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.test.data.cache.model.AccountInfo;
-import com.test.data.cache.repository.AccountRepository;
+import com.test.data.cache.service.AccountRepositoryService;
 
+@Component
 public class CacheImpl implements Cache{
 	
 	private LinkedHashMap<String,AccountInfo> cache;
 	@Autowired
-    private AccountRepository<AccountInfo> accountRepository;
+	AccountRepositoryService accountService;
 	
 	public CacheImpl(){
 		  this.cache = new LinkedHashMap<String,AccountInfo>(1000, 0.75F, true) {
@@ -22,6 +24,7 @@ public class CacheImpl implements Cache{
                  return size() > 1000;
               }
            };
+          
 	}
 
 	
@@ -29,7 +32,7 @@ public class CacheImpl implements Cache{
 		 synchronized(cache) {
 	          cache.put(accInfo.getAccountId(), accInfo);
 	       }
-		 accountRepository.save(accInfo);
+		 accountService.saveAccountToDB(accInfo);
 	}
 
 	
@@ -39,7 +42,7 @@ public class CacheImpl implements Cache{
 			accInfo = cache.get(accountId);
 	       }
 		if(accInfo == null){
-			accInfo = accountRepository.getAccountInfoById(accountId);
+			accInfo = accountService.getAccountInfo(accountId);
 			cache.put(accInfo.getAccountId(), accInfo);
 		}
 		return accInfo;
