@@ -1,0 +1,25 @@
+Mandatory Requirements
+
+1.	5+ years’ experience with Enterprise Java development.
+
+As part of java development process I am responsible to develop java application using structral and behavioural design patterns,exposing the funtionality to integrate with the other components in the same application with interfaces.I will wirte interfaces and concrete implemenations for the interfaces based on the business requirement.I do have good hands-on experience with peer programming,code reviewing and maintaning the code as resusable module.
+
+2.	5+ years’ integrating software with other systems.
+
+To integrate the application wiht other applications(like intgrating my web-app with paypal which is a payment gateway) I develop the RESTful web-service which other applications will make use of.I integrated our on premise application with slaes-force cloud CRM using ORACLE INTEGRATION OF CLOUD SERVICES.I got hands-on experience with integrating my application with identity and access manangemt application for authenticating and authorization.
+
+3.	5+ years’ experience developing unit tests using JUnit testing framework.
+
+For each method I make sure it has a perfect JUNIT test case written and it runs as part of the each build process.I worked with maven builds where I plugged in Jacaco plugin to calculate the line,branch and cyclometric code complexity.I write the test cases in way that Jacaco plugin gives me 100% code coverage for the java code I write.The flow I follow in writing up the test cases are SETUP to prepare the testing environment filling up the datatbase with required data,intializing some important data required for the tests,some test cases require some specific methods to be executed before and after the test so I do it using @Before @After annotations and finally the tear down part to clean up the existing data.
+
+4.	5+ years’ creating, testing, and tuning SQL queries.
+
+As part of the application development I created SQL - queries, prepared testing stratagies to test existing SQL queries and tuned sql queries to improve the performace and make them work as expected.I make sure data integrity, ACID properties are properly validated and Data mapping during the testing phase of the SQL queries.I make use of SQL Profiler to trace queries for fine tuning the sql queries.
+
+5.	5+ years’ experience with Spring and Hibernate/JPA
+Spring-data-JPA I got 5+ years of expernice in using hibernate in my spring application as a ORM way of storing the data in data-base.I got hands on experience in writing Reporitories by extending the CRUD repository,JPA Repository and services for the other components to make use the data store to retrive,store,update and delete the data.In some cases I write named queries to retrive data the way I like and creating composite keys to make two or more colums as a primary key.
+
+6.  2+ years’ experience with Git or another distributed version control system
+
+7.  Proficient in Microsoft Excel
+
